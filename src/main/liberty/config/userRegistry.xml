@@ -1,0 +1,24 @@
+<server description="Sample Liberty server">
+  <basicRegistry id="basic" realm="WebRealm">
+
+    <user name="bob" password="{xor}PTA9Lyg7" /> <!-- bobpwd      Password is simple..but at least it is encrypted -->
+    <user name="admin" password="admin" />    <!-- hardcoded unencrypted password -->
+    <user name="alice" password="alice" />    <!-- hardcoded unencrypted password -->
+    <user name="dave" password="{xor}Oz4pOi8oOw==" />  <!-- davepwd   Password is simple..but at least it is encrypted -->
+
+    <group name="Manager">
+      <member name="bob" />
+      <member name="admin" />
+    </group>
+
+    <group name="Employee">
+      <member name="alice" />
+      <member name="bob" />
+    </group>
+
+    <group name="PartTime">
+      <member name="dave" />
+    </group>
+
+  </basicRegistry>
+</server>
