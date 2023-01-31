@@ -9,7 +9,7 @@ import="io.openliberty.guides.ui.*"%>
     <h2>Administrator page</h2>
         <FORM METHOD="POST" ACTION="ibm_security_logout" NAME="logout">
           <input type="submit" name="logout" value="Log Out" />
-          <input type="HIDDEN" name="logoutExitPage" value="/home" />
+          <input type="HIDDEN" name="logoutExitPage" value="/chapter1" />
         </FORM>
         Username: ${userBean.username} 
         Roles: ${userBean.roles}

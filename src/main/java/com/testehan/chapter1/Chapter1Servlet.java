@@ -15,14 +15,14 @@ import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 
-@WebServlet(urlPatterns = "/home")
+@WebServlet(urlPatterns = "/chapter1")
 @FormAuthenticationMechanismDefinition(
-    loginToContinue = @LoginToContinue(errorPage = "/error.html",
-                                       loginPage = "/welcome.html"))
+    loginToContinue = @LoginToContinue(errorPage = "/html/chpt1/error.html",
+                                       loginPage = "/html/chpt1/loginForm.html"))
 
 @ServletSecurity(value = @HttpConstraint(rolesAllowed = { "user", "admin" },
   transportGuarantee = ServletSecurity.TransportGuarantee.CONFIDENTIAL))
-public class HomeServlet extends HttpServlet {
+public class Chapter1Servlet extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
 
@@ -41,17 +41,17 @@ public class HomeServlet extends HttpServlet {
             }
             roles += Roles.USER.toString();
         }
+
         String username = securityContext.getCallerPrincipal().getName();
 
         UserBean ubean = new UserBean(username, roles);
         HttpSession session= request.getSession();
         session.setAttribute("userBean", ubean);
-        System.out.println("adding user bean: " + ubean.getUsername());
 
         if (securityContext.isCallerInRole(Roles.ADMIN.toString())) {
-            response.sendRedirect("/admin.jsp");
+            response.sendRedirect("/jsp/chpt1/admin.jsp");
         } else if  (securityContext.isCallerInRole(Roles.USER.toString())) {
-            response.sendRedirect("/user.jsp");
+            response.sendRedirect("/jsp/chpt1/user.jsp");
         }
     }
 

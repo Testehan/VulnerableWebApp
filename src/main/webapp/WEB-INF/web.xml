@@ -22,7 +22,7 @@
     <security-constraint>
       <web-resource-collection>
         <web-resource-name>AdminViewProperties</web-resource-name>
-        <url-pattern>/admin.jsp</url-pattern>
+        <url-pattern>/jsp/chpt1/admin.jsp</url-pattern>
       </web-resource-collection>
       <auth-constraint>
         <role-name>admin</role-name>
@@ -32,7 +32,7 @@
     <security-constraint>
       <web-resource-collection>
         <web-resource-name>UserViewProperties</web-resource-name>
-        <url-pattern>/user.jsp</url-pattern>
+        <url-pattern>/jsp/chpt1/user.jsp</url-pattern>
       </web-resource-collection>
       <auth-constraint>
         <role-name>user</role-name>

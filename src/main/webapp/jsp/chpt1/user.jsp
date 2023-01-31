@@ -8,7 +8,8 @@ import="io.openliberty.guides.ui.*"%>
 
     <%
        // Chapter 1 issue 2 fix
-        // back button logins the user back in the app...which is bad..this is a possible solution
+        // back button logins the user back in the app...which is bad..this is a possible solution; Another would be to add
+        // this file to the NoCacheFilter list
        // response.setHeader("Cache-Control","no-cache, no-store, must-revalidate");
        // response.setHeader("Pragma", "no-cache"); // Http 1.0
        // response.setHeader("Expires","0"); // proxies
@@ -24,7 +25,7 @@ import="io.openliberty.guides.ui.*"%>
 
    <FORM METHOD="POST" ACTION="ibm_security_logout" NAME="logout">
         <input type="submit" name="logout" value="Log Out" />
-        <input type="HIDDEN" name="logoutExitPage" value="/home" />
+        <input type="HIDDEN" name="logoutExitPage" value="/chapter1" />
    </FORM>
 
 </body>

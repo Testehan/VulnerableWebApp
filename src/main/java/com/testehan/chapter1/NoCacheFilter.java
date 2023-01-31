@@ -6,7 +6,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
-@WebFilter(urlPatterns = {"/home", "/admin.jsp"})
+@WebFilter(urlPatterns = {"/chapter1", "/jsp/chpt1/admin.jsp"})
 public class NoCacheFilter implements Filter {
 
     @Override
